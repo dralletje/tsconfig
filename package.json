@@ -1,10 +1,18 @@
 {
   "name": "@dral/tsconfig",
+  "version": "1.8.0",
+  "description": "My attempt at simple, modern tsconfigs",
   "private": false,
-  "version": "1.7.0",
+  "repository": {
+    "url": "https://github.com/dralletje/tsconfig"
+  },
+  "author": {
+    "name": "Michiel",
+    "email": "michiel@dral.dev"
+  },
+  "license": "MIT",
   "type": "module",
   "exports": {
-    ".": "./recommended.tsconfig.json",
     "./reasonable": "./reasonable.tsconfig.json",
     "./modern": "./modern.tsconfig.json",
     "./universal": "./universal.tsconfig.json",
