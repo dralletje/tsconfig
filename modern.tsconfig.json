@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    /// You can't do emit with `allowImportingTsExtensions` really, so this is necessary
+    "noEmit": true,
+
+    /// From @tsconfig/node-ts,
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    /// Import that works like bundlers, respects export and imports from package.json,
+    /// and also requires extensions (Yes, yes we should just do that)
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    /// Obviously!
+    "allowImportingTsExtensions": true,
+    /// In case you use loaders (that you might or might not transpile away),
+    /// I think this is important. I was bit shocked by the `filename.d.ext.ts` combination...
+    /// But it makes sense considering `filename.ext.d.ts` might be confused with `filename.ext.ts`:
+    /// e.g. `filename.route.d.ts`, does this mean `filename.route.ts` or `filename.route`??
+    /// (To us this is obvious, but I don't think there would be good heuristics for a computer)
+    /// (https://github.com/microsoft/TypeScript/issues/50133)
+    "allowArbitraryExtensions": true,
+    /// TODO Does esModuleInterop affect the compiler?
+    // "esModuleInterop": true,
+    /// TODO I'm not sure about if this is something that belongs in this file though...
+    "skipLibCheck": true,
+  },
+}

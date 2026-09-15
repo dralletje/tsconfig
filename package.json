@@ -1,0 +1,14 @@
+{
+  "name": "@dral/tsconfig",
+  "private": false,
+  "version": "1.7.0",
+  "type": "module",
+  "exports": {
+    ".": "./recommended.tsconfig.json",
+    "./reasonable": "./reasonable.tsconfig.json",
+    "./modern": "./modern.tsconfig.json",
+    "./universal": "./universal.tsconfig.json",
+    "./composite": "./composite.tsconfig.json"
+  },
+  "packageManager": "pnpm@12.3.4"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    ///////////////////////// Stricter:
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    /// Normally typescript doesn't check `import "x"` for if `x` exists
+    "noUncheckedSideEffectImports": true,
+    /// typeof { [key: string]: string }[0] = unknown, DUH
+    "noUncheckedIndexedAccess": true,
+    /// Duh
+    "allowUnusedLabels": false,
+    ///////////////////////// Less strict:
+    /// I'm not yet ready for this one (and it seems silly)
+    "noPropertyAccessFromIndexSignature": false,
+    /// I think unused variables are fine if they are greyed out....
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": true,
+    /// This makes `{ x: undefined }` and `{ x?: undefined }` different...
+    "exactOptionalPropertyTypes": false,
+  },
+}
